@@ -5,5 +5,31 @@
     <title>Ecommerce Platform</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <header>
+      <h1>🛍️ My Ecommerce Store</h1>
+    </header>
+    <a href="history.html">📜 View History</a>
+
+    <div class="search-box">
+      <input
+        type="text"
+        id="inputBox"
+        placeholder="search here"
+        autocomplete="off"
+      />
+      <button id="btn">SEARCH</button>
+
+      <!-- ✅ Suggestions Box -->
+      <div id="suggestions"></div>
+    </div>
+
+    <main>
+      <h2>Products</h2>
+      <div id="product-container" class="products"></div>
+      <div id="pagination"></div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
