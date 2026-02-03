@@ -17,7 +17,7 @@ fetch("https://dummyjson.com/products")
     );
 
     if (filtered.length === 0) {
-      heading.innerText = "❌ No results found for: " + query;
+      heading.innerText = "No results found for: " + query;
       return;
     }
 
@@ -48,5 +48,5 @@ fetch("https://dummyjson.com/products")
   })
   .catch((err) => {
     console.error(err);
-    heading.innerText = "⚠️ Error loading products";
+    heading.innerText = "Error loading products";
   });
