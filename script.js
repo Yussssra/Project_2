@@ -1,4 +1,4 @@
-console.log("JS FILE LOADED ✅");
+console.log("JS FILE LOADED");
 const container = document.getElementById("product-container");
 const inputBox = document.getElementById("inputBox");
 const btn = document.getElementById("btn");
@@ -43,7 +43,7 @@ function renderProducts(products) {
     card.appendChild(desc);
     card.appendChild(price);
 
-    // ✅ CLICK PRODUCT → SAVE VISIT + REDIRECT
+    // CLICK PRODUCT → SAVE VISIT + REDIRECT
     card.addEventListener("click", () => {
       saveVisit(product);
       window.location.href = `product.html?id=${product.id}`;
