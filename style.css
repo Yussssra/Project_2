@@ -1,4 +1,4 @@
-/* ===== Global Styles (Enhanced Minimalism) ===== */
+/* ===== Global Styles (Enhanced Minimalism + Polish) ===== */
 :root {
   --primary-color: #2563eb;
   /* Royal Blue */
@@ -8,7 +8,8 @@
   --text-muted: #6b7280;
   --border-color: #e5e7eb;
   --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --hover-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --hero-gradient: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
 }
 
 * {
@@ -21,69 +22,131 @@
 body {
   background: var(--bg-color);
   color: var(--text-main);
-  padding: 40px 20px;
+  padding: 0;
+  /* Full width for hero */
   line-height: 1.6;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-  transition: color 0.2s;
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* ===== Header ===== */
 header {
   text-align: center;
-  margin-bottom: 50px;
+  padding: 20px;
+  background: white;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 header h1 {
-  font-size: 36px;
+  font-size: 24px;
   font-weight: 700;
-  letter-spacing: -1px;
+  letter-spacing: -0.5px;
   color: var(--text-main);
-  margin-bottom: 10px;
 }
 
-/* ===== Navigation Links ===== */
-body>a {
-  display: inline-block;
-  margin-bottom: 40px;
-  font-size: 14px;
-  font-weight: 500;
+/* ===== Hero Section (NEW) ===== */
+.hero {
+  background: var(--hero-gradient);
+  color: white;
+  padding: 80px 20px;
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  animation: heroPop 0.8s ease-out;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+
+.hero p {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 32px;
+}
+
+#hero-btn {
+  padding: 16px 32px;
+  background: white;
   color: var(--primary-color);
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
-body>a:hover {
-  border-bottom-color: var(--primary-color);
+#hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ===== Search Section ===== */
 .search-box {
   position: relative;
   max-width: 550px;
-  margin: 0 auto 60px auto;
+  margin: -30px auto 60px auto;
+  /* Pull up into hero slightly */
   display: flex;
   gap: 12px;
+  background: white;
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
 
 #inputBox {
   flex: 1;
   padding: 14px 20px;
-  border: 2px solid var(--border-color);
+  border: 1px solid transparent;
   border-radius: 12px;
   font-size: 16px;
   outline: none;
-  background: #fff;
-  transition: all 0.2s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  background: white;
 }
 
 #inputBox:focus {
   border-color: var(--primary-color);
-  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
 #btn {
@@ -95,14 +158,11 @@ body>a:hover {
   font-size: 15px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
-  transition: all 0.2s ease;
+  transition: background 0.2s;
 }
 
 #btn:hover {
   background: var(--primary-hover);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 10px rgba(37, 99, 235, 0.3);
 }
 
 /* ===== Suggestions Box ===== */
@@ -136,26 +196,18 @@ body>a:hover {
 }
 
 /* ===== Main Section ===== */
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 main h2 {
   text-align: center;
   margin-bottom: 40px;
-  font-size: 28px;
-  font-weight: 600;
+  font-size: 32px;
+  font-weight: 700;
   color: var(--text-main);
-  position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-main h2::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 4px;
-  background: var(--primary-color);
-  border-radius: 2px;
-  margin: 8px auto 0;
 }
 
 /* ===== Products Grid ===== */
@@ -164,8 +216,7 @@ main h2::after {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding-bottom: 60px;
 }
 
 /* ===== Product Card ===== */
@@ -180,7 +231,11 @@ main h2::after {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
 }
+
+/* Stagger animation for checking feel - simpler to just let them fade in naturally */
 
 .product-card:hover {
   transform: translateY(-8px);
@@ -228,7 +283,7 @@ main h2::after {
 
 /* ===== Pagination ===== */
 #pagination {
-  margin: 60px 0 20px;
+  margin: 20px 0 60px;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -259,11 +314,31 @@ main h2::after {
   box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
 }
 
+/* ===== Footer (NEW) ===== */
+footer {
+  background: #111827;
+  color: white;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: auto;
+}
+
+footer p {
+  opacity: 0.6;
+  font-size: 14px;
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+
   .search-box {
+    width: 90%;
     flex-direction: column;
-    width: 100%;
+    padding: 16px;
+    margin-top: -40px;
   }
 
   #btn {
@@ -272,14 +347,6 @@ main h2::after {
 }
 
 @media (max-width: 600px) {
-  body {
-    padding: 20px 15px;
-  }
-
-  header h1 {
-    font-size: 28px;
-  }
-
   .products {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px;

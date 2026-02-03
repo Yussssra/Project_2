@@ -1,38 +1,49 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Ecommerce Platform</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <h1>🛍️ My Ecommerce Store</h1>
-    </header>
-    <a href="history.html">📜 View History</a>
 
-    <div class="search-box">
-      <input
-        type="text"
-        id="inputBox"
-        placeholder="search here"
-        autocomplete="off"
-      />
-      <button id="btn">SEARCH</button>
+<head>
+  <meta charset="UTF-8" />
+  <title>Ecommerce Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-      <!-- ✅ Suggestions Box -->
-      <div id="suggestions"></div>
+<body>
+  <header>
+    <h1>🛍️ My Ecommerce Store</h1>
+  </header>
+  <a href="history.html">📜 View History</a>
+
+  <div class="search-box">
+    <input type="text" id="inputBox" placeholder="search here" autocomplete="off" />
+    <button id="btn">SEARCH</button>
+
+    <!-- ✅ Suggestions Box -->
+    <div id="suggestions"></div>
+  </div>
+
+  <!-- ✅ Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Discover the Future of Style</h1>
+      <p>Premium products at unbeatable prices.</p>
+      <button id="hero-btn">Shop Collection</button>
     </div>
+  </section>
 
-    <main>
-      <h2>Products</h2>
-      <div id="product-container" class="products"></div>
-      <div id="pagination"></div>
-    </main>
+  <main>
+    <h2>Trending Products</h2>
+    <div id="product-container" class="products"></div>
+    <div id="pagination"></div>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <footer>
+    <p>&copy; 2026 My Ecommerce Store. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
 </html>
