@@ -52,22 +52,52 @@ body {
   }
 }
 
-/* ===== Header ===== */
+/* ===== Header (Redesigned) ===== */
 header {
-  text-align: center;
-  padding: 20px;
   background: white;
   border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  padding: 0;
+  /* Container handles padding */
 }
 
-header h1 {
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
   font-size: 24px;
-  font-weight: 700;
+  font-weight: 800;
+  color: var(--text-main);
   letter-spacing: -0.5px;
+  text-decoration: none;
+}
+
+.logo:hover {
+  color: var(--primary-color);
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  background: #f9fafb;
+}
+
+.nav-link:hover {
+  background: #f3f4f6;
   color: var(--text-main);
 }
 
